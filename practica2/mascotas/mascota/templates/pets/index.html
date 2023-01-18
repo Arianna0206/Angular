@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block titulo %} Nosotros {% endblock %}
+
+{% block contenido %}  
+
+
+<div class="card1">
+    <div class="card-header">
+        Mascotas
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Pets</h4>
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Raza</th>
+                        <th scope="col">edad</th>
+                        <th scope="col">altura</th>
+                        <th scope="col">vacunado</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for mascotas in pets %}
+
+                    <tr class="">
+                        <td>{{mascotas.id}}</td> 
+                        <td>{{mascotas.nombre}}</td>
+                        <td>{{mascotas.raza}}</td>
+                        <td>{{mascotas.edad}}</td>
+                        <td>{{mascotas.altura}}</td>
+                        <td>{{mascotas.estaVacunado}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+    <div class="card-footer text-muted">
+    
+    </div>
+</div>
+
+{% endblock %}
