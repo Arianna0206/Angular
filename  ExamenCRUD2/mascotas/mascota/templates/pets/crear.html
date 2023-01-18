@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %} Agregar nueva categoria {% endblock %}
+
+{% block contenido %}  
+
+<div class="card">
+    <div class="card-header">
+        Crear categoria
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datoss</h4>
+       {% include 'pets/form.html'%}
+    </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+
+
+{% endblock %}

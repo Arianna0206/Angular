@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block titulo %} Nosotros {% endblock %}
+
+{% block contenido %}  
+
+
+<div class="card1">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar nueva ctaegoria</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Pets</h4>
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for mascotas in pets %}
+
+                    <tr class="">
+                        <td>{{mascotas.id}}</td> 
+                        <td>{{mascotas.nombre}}</td>
+                        <td>{{mascotas.fecha}}</td>
+                        <td>{{mascotas.tipo}}</td>
+                        <td>{{mascotas.descripcion}}</td>
+                        <td> 
+                            <a name="" id="" class="btn btn-info" href="{% url 'editar' %}" role="button">Editar</a> 
+                            | 
+                            <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' mascotas.id %}" role="button">Borrar</a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+    <div class="card-footer text-muted">
+    
+    </div>
+</div>
+
+{% endblock %}
